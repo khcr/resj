@@ -11,21 +11,20 @@ module OratorSearch
     settings index: default_settings do
       mapping do
         indexes :user do
-          indexes :firstname, analyzer: :partial_french, boost: 10, type: :string
-          indexes :lastname, type: :multi_field, fields: { 
-            lastname: { type: :string, analyzer: :partial_french, boost: 10}, 
-            lowercase: { type: :string, analyzer: :case_insensitive_sort } 
+          indexes :firstname, boost: 10, type: :keyword
+          indexes :lastname, type: :keyword, boost: 10, fields: { 
+            lowercase: { type: :keyword } 
           }
         end
         indexes :location do
           indexes :canton do
             indexes :id, type: :integer
-            indexes :name, type: :string
+            indexes :name, type: :keyword
           end
         end
         indexes :themes do
           indexes :id, type: :integer
-          indexes :name, type: :string
+          indexes :name, type: :keyword
         end
         indexes :disabled, type: :boolean
       end

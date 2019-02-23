@@ -1,4 +1,4 @@
-class CreateResourceThemes < ActiveRecord::Migration
+class CreateResourceThemes < ActiveRecord::Migration[4.2]
   def change
     create_table :resource_themes do |t|
       t.belongs_to :resource, index: true

@@ -1,4 +1,4 @@
-class CreateCardVerifications < ActiveRecord::Migration
+class CreateCardVerifications < ActiveRecord::Migration[4.2]
   def change
     create_table :card_verifications do |t|
       t.belongs_to :card, index: true

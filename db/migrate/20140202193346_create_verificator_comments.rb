@@ -1,4 +1,4 @@
-class CreateVerificatorComments < ActiveRecord::Migration
+class CreateVerificatorComments < ActiveRecord::Migration[4.2]
   def change
     create_table :verificator_comments do |t|
       t.text :content

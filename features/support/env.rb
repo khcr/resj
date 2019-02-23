@@ -67,7 +67,7 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 #   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 # end
 #
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :selenium_chrome_headless
 
 Capybara::Webkit.configure do |config|
   config.block_unknown_urls
@@ -78,7 +78,7 @@ Before('@selenium') do
 end
 
 After('@selenium') do
-  Capybara.javascript_driver = :webkit
+  Capybara.javascript_driver = :selenium_chrome_headless
 end
 
 Capybara.default_max_wait_time = 5

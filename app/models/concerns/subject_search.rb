@@ -10,11 +10,11 @@ module SubjectSearch
 
     settings index: default_settings do
       mapping do
-        indexes :name, analyzer: :partial_french, boost: 10, type: :string
-        indexes :description, type: :string
+        indexes :name, boost: 10, type: :keyword
+        indexes :description, type: :keyword
         indexes :themes do
           indexes :id, type: :integer
-          indexes :name, type: :string
+          indexes :name, type: :keyword
         end
       end
     end
